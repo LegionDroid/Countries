@@ -1,7 +1,8 @@
-package com.brfdeveloper.countries
+package com.brfdeveloper.countries.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.brfdeveloper.countries.R
 
 class MainActivity : AppCompatActivity() {
 
