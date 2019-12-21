@@ -33,15 +33,14 @@
                 android:layout_height="0dp"
                 android:text="@string/error_text"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@+id/actmain_rv_countriesList"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintHorizontal_bias="0.512"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="@+id/actmain_rv_countriesList"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         <ProgressBar
                 android:id="@+id/actmain_pb"
@@ -51,10 +50,11 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
-                app:layout_constraintHorizontal_bias="0.466"
-                app:layout_constraintBottom_toBottomOf="@+id/actmain_tv_list_error"
+                app:layout_constraintHorizontal_bias="0.498"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     </android.support.constraint.ConstraintLayout>
