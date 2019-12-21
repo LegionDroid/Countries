@@ -1,3 +1,14 @@
 package com.brfdeveloper.countries.model
 
-data class Country(val countryName: String?)
+import com.google.gson.annotations.SerializedName
+
+data class Country(
+    @SerializedName("name")
+    val countryName: String?,
+    @SerializedName("capital")
+    val Capital: String?,
+    @SerializedName("flagPNG")
+    val flag: String?
+)
+
+data class Mundo(val planeta: String)
