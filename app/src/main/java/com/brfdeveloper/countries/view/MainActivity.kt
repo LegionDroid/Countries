@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
             adapter = countriesAdapter
         }
 
+        actmain_swipeRefreshLayout.setOnRefreshListener {
+            actmain_swipeRefreshLayout.isRefreshing = false
+            viewModel.refresh()
+        }
+
         observeViewModel()
     }
 
