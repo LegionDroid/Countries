@@ -2,6 +2,7 @@ package com.brfdeveloper.countries.di
 
 import com.brfdeveloper.countries.model.API.CountriesApi
 import com.brfdeveloper.countries.model.API.CountriesService
+import com.brfdeveloper.countries.model.API.ICountriesService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -23,7 +24,7 @@ class ApiModule {
     }
 
     @Provides
-    fun provideCountriesService(): CountriesService{
+    fun provideCountriesService(): ICountriesService {
         return CountriesService()
     }
 }

@@ -2,8 +2,10 @@ package com.brfdeveloper.countries
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import com.brfdeveloper.countries.model.API.CountriesService
+import com.brfdeveloper.countries.model.API.ICountriesService
 import com.brfdeveloper.countries.model.Country
 import com.brfdeveloper.countries.viewmodel.ListViewModel
+import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.plugins.RxAndroidPlugins
@@ -28,7 +30,7 @@ class ListViewModelTest {
     var rule = InstantTaskExecutorRule()
 
     @Mock
-    lateinit var countriesService: CountriesService
+    lateinit var countriesService: ICountriesService
 
     @InjectMocks
     var listViewModel = ListViewModel()

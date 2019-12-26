@@ -6,8 +6,10 @@ import android.util.Log
 import com.brfdeveloper.countries.di.DaggerApiComponent
 import com.brfdeveloper.countries.model.API.CountriesApi
 import com.brfdeveloper.countries.model.API.CountriesService
+import com.brfdeveloper.countries.model.API.ICountriesService
 import com.brfdeveloper.countries.model.Country
 import com.brfdeveloper.countries.model.Mundo
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -17,11 +19,12 @@ import javax.inject.Inject
 class ListViewModel : ViewModel() {
 
     @Inject
-    lateinit var countriesService: CountriesService
+    lateinit var countriesService: ICountriesService
 
     init {
         DaggerApiComponent.create().inject(this)
     }
+
     private val disposable = CompositeDisposable()
 
     val countries = MutableLiveData<List<Country>>()
@@ -39,7 +42,7 @@ class ListViewModel : ViewModel() {
             countriesService.getCountries()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object: DisposableSingleObserver<List<Country>>(){
+                .subscribeWith(object : DisposableSingleObserver<List<Country>>() {
                     override fun onSuccess(value: List<Country>?) {
                         countries.value = value
                         countryLoadError.value = false

@@ -5,7 +5,7 @@ import com.brfdeveloper.countries.model.Country
 import io.reactivex.Single
 import javax.inject.Inject
 
-class CountriesService{
+class CountriesService: ICountriesService{
 
     @Inject
     lateinit var api: CountriesApi
@@ -15,7 +15,7 @@ class CountriesService{
         DaggerApiComponent.create().inject(this)
     }
 
-    fun getCountries(): Single<List<Country>> {
+    override fun getCountries(): Single<List<Country>> {
         return api.getCountries()
     }
 }
